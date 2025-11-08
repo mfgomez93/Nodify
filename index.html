@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nodify - Agente Automatizado para Turnos</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg py-3 sticky-top border-bottom bg-white-70">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <!-- Logo imagen -->
+        <img src="images/logo.jpeg" alt="Nodify" width="28" height="28" style="object-fit: contain;">
+        <span class="fw-bold">Nodify</span>
+      </a>
+  
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#precios">Nuestros servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#quienes-somos">Quiénes somos</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-brand shadow-soft" href="#cta">Solicitá tu agente</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- RIBBON DE CONFIANZA -->
+  <div class="bg-white border-bottom">
+    <div class="container py-2 d-flex flex-wrap align-items-center justify-content-center gap-3 small text-secondary">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-lock-fill text-success"></i> Datos seguros (Google & Meta APIs)
+      </div>
+      <span class="vr"></span>
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-lightning-charge-fill text-warning"></i> Activación en horas
+      </div>
+      <span class="vr"></span>
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-patch-check-fill text-primary"></i> Soporte humano + IA
+      </div>
+    </div>
+  </div>
+  
+  <!-- HERO con parallax + partículas -->
+  <header class="hero position-relative overflow-hidden">
+    <!-- capas parallax -->
+    <div class="layer l1"></div>
+    <div class="layer l2"></div>
+    <div class="layer l3"></div>
+  
+    <!-- partículas flotantes decorativas -->
+    <div class="float-sq fs1"></div>
+    <div class="float-sq fs2"></div>
+    <div class="float-sq fs3"></div>
+  
+    <div class="container py-5 py-lg-6">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="badge badge-soft rounded-pill px-3 py-2 reveal-up show">WhatsApp + IA + Google Calendar</span>
+          <h1 class="display-5 fw-bold mt-3 reveal-up show">
+            Turnos automáticos con <span class="brand">Nodify</span>
+          </h1>
+          <p class="lead text-secondary reveal-up delay-1 show">
+            Tus clientes escriben por WhatsApp, la IA confirma, agenda en Google Calendar y envía recordatorios.
+          </p>
+          <div class="d-flex gap-2 reveal-up delay-2 show">
+            <a href="#demo" class="btn btn-brand btn-lg shadow-soft"><i class="bi bi-play-circle"></i> Ver demo</a>
+            <a href="#precios" class="btn btn-outline-dark btn-lg">Nuestros servicios</a>
+          </div>
+        </div>
+  
+        <!-- Carrusel de beneficios -->
+        <div class="col-lg-6">
+          <div id="heroCarousel" class="carousel slide shadow-soft rounded-2xl overflow-hidden tilt" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active p-4 bg-white">
+                <div class="d-flex align-items-center gap-3">
+                  <i class="bi bi-robot fs-1 text-primary"></i>
+                  <div>
+                    <h5 class="mb-1">Agente con IA 24/7</h5>
+                    <p class="mb-0 text-secondary">Responde, propone horarios y confirma en segundos.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item p-4 bg-white">
+                <div class="d-flex align-items-center gap-3">
+                  <i class="bi bi-calendar-check fs-1 text-primary"></i>
+                  <div>
+                    <h5 class="mb-1">Agenda en Google Calendar</h5>
+                    <p class="mb-0 text-secondary">Bloqueo de turnos, notas y reprogramación simple.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item p-4 bg-white">
+                <div class="d-flex align-items-center gap-3">
+                  <i class="bi bi-bell fs-1 text-primary"></i>
+                  <div>
+                    <h5 class="mb-1">Recordatorios automáticos</h5>
+                    <p class="mb-0 text-secondary">24/48h antes por WhatsApp. Menos ausencias.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <section class="py-4 border-top border-bottom bg-white">
+    <div class="container text-center">
+      <div class="text-uppercase small text-secondary mb-3">Funciona con</div>
+      <div class="d-flex flex-wrap justify-content-center gap-4 logos">
+        <div class="logo-pill"><i class="bi bi-whatsapp"></i> WhatsApp</div>
+        <div class="logo-pill"><i class="bi bi-diagram-3"></i> n8n</div>
+        <div class="logo-pill"><i class="bi bi-calendar-event"></i> Google Calendar</div>
+        <div class="logo-pill"><i class="bi bi-cloud"></i> Google Cloud</div>
+        <div class="logo-pill"><i class="bi bi-kanban"></i> Webhooks/APIs</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SERVICIOS (con tarjetas flotantes) -->
+  <section id="precios" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Planes y precios</h2>
+        <p class="text-secondary mb-0">Elegí el esquema que mejor se adapta a tu etapa</p>
+      </div>
+  
+      <div class="row g-4">
+        <!-- Sitio Web (consultar) -->
+        <div class="col-md-3">
+          <div class="p-4 bg-white border rounded-2xl shadow-pro h-100">
+            <h5 class="fw-semibold">Sitio Web</h5>
+            <div class="display-6 fw-bold my-2 price-tag">Consultar</div>
+            <ul class="text-secondary small mb-3">
+              <li>Web institucional</li>
+              <li>SEO técnico básico</li>
+              <li>Contacto + mapa</li>
+            </ul>
+            <a href="#cta" class="btn btn-outline-primary w-100">Consultar</a>
+          </div>
+        </div>
+  
+        <!-- Agente Automatizado BÁSICO ($10.000 ARS) -->
+        <div class="col-md-3">
+          <div class="p-4 bg-white border border-2 highlight rounded-2xl shadow-pro h-100 position-relative">
+            <span class="badge badge-soft position-absolute top-0 end-0 m-3">Recomendado</span>
+            <h5 class="fw-semibold">Agente Automatizado — Básico</h5>
+            <div class="display-6 fw-bold my-2 price-tag">$ 10.000 ARS</div>
+            <ul class="text-secondary small mb-3">
+              <li>WhatsApp + IA 24/7</li>
+              <li>Agenda en Google Calendar</li>
+              <li>Recordatorios 24/48h</li>
+            </ul>
+            <a href="#demo" class="btn btn-brand w-100">Ver DEMO</a>
+          </div>
+        </div>
+  
+        <!-- Agente Automatizado PRO (consultar) -->
+        <div class="col-md-3">
+          <div class="p-4 bg-white border rounded-2xl shadow-pro h-100">
+            <h5 class="fw-semibold">Agente Automatizado — Pro</h5>
+            <div class="display-6 fw-bold my-2 price-tag">Consultar</div>
+            <ul class="text-secondary small mb-3">
+              <li>Todo lo del Básico</li>
+              <li>Múltiples agendas/equipos</li>
+              <li>Reglas anti no-show y doble recordatorio</li>
+              <li>Respuestas enriquecidas (catálogo/links)</li>
+              <li>Panel de métricas (básico)</li>
+            </ul>
+            <a href="#cta" class="btn btn-outline-primary w-100">Solicitar propuesta</a>
+          </div>
+        </div>
+  
+        <!-- Landing (consultar) -->
+        <div class="col-md-3">
+          <div class="p-4 bg-white border rounded-2xl shadow-pro h-100">
+            <h5 class="fw-semibold">Landing Performance</h5>
+            <div class="display-6 fw-bold my-2 price-tag">Consultar</div>
+            <ul class="text-secondary small mb-3">
+              <li>Landing + CTA WhatsApp</li>
+              <li>Testimonios / FAQ</li>
+              <li>Métricas de clics</li>
+            </ul>
+            <a href="#cta" class="btn btn-outline-primary w-100">Consultar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Opiniones-->
+  <!-- OPINIONES / TESTIMONIOS PRO -->
+  <section id="opiniones" class="py-5 bg-white border-top">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Lo que dicen quienes lo usan</h2>
+        <p class="text-secondary mb-0">Distintos rubros, mismo resultado: más turnos con menos fricción</p>
+      </div>
+  
+      <div id="opinionesCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+  
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row g-4">
+              <!-- Estética -->
+              <div class="col-md-4">
+                <div class="op-card p-4 rounded-2xl border bg-white shadow-pro h-100">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div class="brand-id">
+                      <span class="logo-badge logo-pink">BG</span>
+                      <div>
+                        <div class="fw-semibold">Belle Glow</div>
+                        <div class="badge badge-soft">Estética</div>
+                      </div>
+                    </div>
+                    <div class="stars" aria-label="5 estrellas">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                  <p class="mb-3">“Bajamos los no-shows con recordatorios 24/48h y ordenamos la agenda sin usar otra app.”</p>
+                  <div class="kpis">
+                    <span class="kpi">−40% no-show</span>
+                    <span class="kpi">+22% reservas</span>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Kinesiología -->
+              <div class="col-md-4">
+                <div class="op-card p-4 rounded-2xl border bg-white shadow-pro h-100">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div class="brand-id">
+                      <span class="logo-badge logo-blue">KM</span>
+                      <div>
+                        <div class="fw-semibold">KineMove</div>
+                        <div class="badge badge-soft">Kinesiología</div>
+                      </div>
+                    </div>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                    </div>
+                  </div>
+                  <p class="mb-3">“Confirmo por chat y el turno aparece en Calendar con notas clínicas.”</p>
+                  <div class="kpis">
+                    <span class="kpi">-1h/sem admin</span>
+                    <span class="kpi">+15% cumplimiento</span>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Nutrición -->
+              <div class="col-md-4">
+                <div class="op-card p-4 rounded-2xl border bg-white shadow-pro h-100">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div class="brand-id">
+                      <span class="logo-badge logo-green">NV</span>
+                      <div>
+                        <div class="fw-semibold">NutriVida</div>
+                        <div class="badge badge-soft">Nutrición</div>
+                      </div>
+                    </div>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                    </div>
+                  </div>
+                  <p class="mb-3">“El agente responde fuera de horario y no pierdo consultas del fin de semana.”</p>
+                  <div class="kpis">
+                    <span class="kpi">+30% leads</span>
+                    <span class="kpi">24/7</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row g-4">
+              <!-- Barbería -->
+              <div class="col-md-4">
+                <div class="op-card p-4 rounded-2xl border bg-white shadow-pro h-100">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div class="brand-id">
+                      <span class="logo-badge logo-dark">BC</span>
+                      <div>
+                        <div class="fw-semibold">Barber Club</div>
+                        <div class="badge badge-soft">Barbería</div>
+                      </div>
+                    </div>
+                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></div>
+                  </div>
+                  <p class="mb-3">“La gente agenda por WhatsApp, listo. Menos llamados, más cortes.”</p>
+                  <div class="kpis">
+                    <span class="kpi">+18% ocupación</span>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Gimnasio -->
+              <div class="col-md-4">
+                <div class="op-card p-4 rounded-2xl border bg-white shadow-pro h-100">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div class="brand-id">
+                      <span class="logo-badge logo-orange">FB</span>
+                      <div>
+                        <div class="fw-semibold">FitBox</div>
+                        <div class="badge badge-soft">Gimnasio</div>
+                      </div>
+                    </div>
+                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+                  </div>
+                  <p class="mb-3">“Reservas de clases por chat, cupos claros y recordatorios.”</p>
+                  <div class="kpis">
+                    <span class="kpi">+25% asistencia</span>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Odontología -->
+              <div class="col-md-4">
+                <div class="op-card p-4 rounded-2xl border bg-white shadow-pro h-100">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div class="brand-id">
+                      <span class="logo-badge logo-cyan">OD</span>
+                      <div>
+                        <div class="fw-semibold">Odonto+</div>
+                        <div class="badge badge-soft">Odontología</div>
+                      </div>
+                    </div>
+                    <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                  </div>
+                  <p class="mb-3">“Confirmaciones automáticas y menos huecos en la grilla.”</p>
+                  <div class="kpis">
+                    <span class="kpi">−35% ausencias</span>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+  
+        <button class="carousel-control-prev" type="button" data-bs-target="#opinionesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#opinionesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  <!--Quienes somos-->
+  <!-- QUIÉNES SOMOS — DISEÑO PRO -->
+  <section id="quienes-somos" class="py-5 gradient-surface border-top border-bottom">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold reveal-up">Quiénes somos</h2>
+        <p class="text-secondary mb-0 reveal-up delay-1">Conocé nuestro equipo y valores</p>
+      </div>
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-5">
+          <div class="about-card p-4 p-md-5 bg-white rounded-2xl shadow-pro h-100">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <i class="bi bi-people-fill text-primary fs-4"></i>
+              <h3 class="fw-bold mb-0">Quiénes somos</h3>
+            </div>
+            <p class="text-secondary mb-3">
+              Somos un equipo obsesionado con <strong>simplificar la reserva de turnos</strong> usando IA y herramientas que ya usás: WhatsApp y Google Calendar.
+            </p>
+            <div class="pill-list d-flex flex-wrap gap-2">
+              <span class="pill"><i class="bi bi-shield-check"></i> Seguridad</span>
+              <span class="pill"><i class="bi bi-rocket-takeoff"></i> Implementación rápida</span>
+              <span class="pill"><i class="bi bi-graph-up-arrow"></i> Resultados medibles</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-7">
+          <div class="row g-3 h-100">
+            <!-- Misión -->
+            <div class="col-sm-4">
+              <div class="mvv h-100 rounded-2xl">
+                <div class="mvv-accent"></div>
+                <div class="p-4">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-bullseye text-primary"></i>
+                    <h6 class="mb-0">Misión</h6>
+                  </div>
+                  <p class="small text-secondary mb-0">
+                    Democratizar la automatización para profesionales y pymes con soluciones simples y accesibles.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Visión -->
+            <div class="col-sm-4">
+              <div class="mvv h-100 rounded-2xl">
+                <div class="mvv-accent"></div>
+                <div class="p-4">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-compass text-primary"></i>
+                    <h6 class="mb-0">Visión</h6>
+                  </div>
+                  <p class="small text-secondary mb-0">
+                    Ser la opción elegida en LATAM para agendamiento por chat con IA.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Valores -->
+            <div class="col-sm-4">
+              <div class="mvv h-100 rounded-2xl">
+                <div class="mvv-accent"></div>
+                <div class="p-4">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-gem text-primary"></i>
+                    <h6 class="mb-0">Valores</h6>
+                  </div>
+                  <p class="small text-secondary mb-0">
+                    Cercanía, transparencia, seguridad de datos y mejora continua.
+                  </p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Propuesta de valor -->
+            <div class="col-12">
+              <div class="pv glass rounded-2xl p-4 p-md-5">
+                <h5 class="fw-bold mb-2">Propuesta de valor</h5>
+                <p class="mb-0 text-secondary">
+                  <strong>Más turnos, menos fricción:</strong> integrá WhatsApp con IA y Calendar sin cambiar tu forma de trabajar.
+                  Implementación rápida, costo accesible y resultados medibles desde el día uno.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- DEMO INTERACTIVA -->
+  <section id="demo" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold reveal-up">DEMO</h2>
+        <p class="text-secondary mb-0 reveal-up delay-1">Mirá el flujo en un chat simulado</p>
+      </div>
+  
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 d-flex justify-content-lg-end justify-content-center">
+          <!-- Mockup WhatsApp animado -->
+          <div class="phone tilt">
+            <div class="screen">
+              <div class="wa-header">
+                <div class="avatar"></div>
+                <div>
+                  <div class="small fw-semibold">Belle Glow Estética</div>
+                  <div class="small" style="opacity:.8">en línea</div>
+                </div>
+              </div>
+              <div id="chat" class="chat"><!-- mensajes por JS --></div>
+              <div class="wa-input">
+                <input id="typing" disabled placeholder="Escribiendo…" />
+                <button class="btn btn-success"><i class="bi bi-mic-fill"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Pasos + CTA -->
+        <div class="col-lg-6">
+          <div class="timeline reveal-up">
+            <div class="item pb-3">
+              <h6 class="mb-1">1. Cliente escribe por WhatsApp</h6>
+              <p class="text-secondary mb-0">“¿Tenés turno el miércoles a la tarde?”</p>
+            </div>
+            <div class="item pb-3">
+              <h6 class="mb-1">2. IA entiende y propone horario</h6>
+              <p class="text-secondary mb-0">Consultamos disponibilidad y ofrecemos opciones.</p>
+            </div>
+            <div class="item pb-3">
+              <h6 class="mb-1">3. Confirmación</h6>
+              <p class="text-secondary mb-0">Con un “Sí” queda reservado.</p>
+            </div>
+            <div class="item">
+              <h6 class="mb-1">4. Agenda & Recordatorios</h6>
+              <p class="text-secondary mb-0">Evento en Google Calendar + avisos 24/48h.</p>
+            </div>
+          </div>
+          <a href="#cta" class="btn btn-brand mt-3"><i class="bi bi-lightning-charge"></i> Solicitá tu agente aquí</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section id="cta" class="py-5 bg-white border-top">
+    <div class="container text-center">
+      <h2 class="fw-bold reveal-up"> Activalo para tu negocio</h2>
+      <p class="text-secondary reveal-up delay-1">Dejanos un contacto y te ayudamos a implementar en horas.</p>
+      <a href="#contacto" class="btn btn-brand btn-lg px-4 reveal-up delay-2"><i class="bi bi-send"></i> Solicitá tu agente aquí</a>
+    </div>
+  </section>
+  
+  <!--Solicita tu agente-->
+  <!-- MODAL CONTACTO -->
+  <div class="modal fade" id="leadModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-2xl">
+        <div class="modal-header">
+          <h5 class="modal-title">Solicitá tu agente</h5>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <form id="leadForm" class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Nombre y apellido</label>
+            <input class="form-control" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">WhatsApp</label>
+            <input class="form-control" name="phone" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Rubro</label>
+            <select class="form-select" name="vertical" required>
+              <option value="">Elegí…</option>
+              <option>Estética</option><option>Kinesiología</option><option>Nutrición</option><option>Otro</option>
+            </select>
+          </div>
+          <button class="btn btn-brand w-100" type="submit"><i class="bi bi-send"></i> Enviar</button>
+        </form>
+        <div id="leadOk" class="d-none p-4 text-center">
+          <i class="bi bi-patch-check-fill text-success fs-2"></i>
+          <p class="mt-2 mb-0">¡Gracias! Te contactamos a la brevedad.</p>
+        </div>
+        <div class="small text-center text-secondary pb-3">Protegemos tus datos • Solo uso de contacto</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- FOOTER -->
+  <footer class="py-4">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-2">
+        <img src="images/logo.jpeg" alt="Nodify" width="22" height="22" style="object-fit: contain;">
+        <strong>Nodify</strong>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a class="text-secondary fs-5" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a class="text-secondary fs-5" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
+  </footer>
+  <!-- Bootstrap JS (bundle con Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- App JS -->
+  <script src="app.js"></script>
+</body>
+</html>
